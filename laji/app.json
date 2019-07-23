@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/test/test",
+    "pages/download/download",
+    "pages/talk/talk",
+    "pages/content/content"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+    "tabBar": {
+      "color": "#4c4c4c",
+      "selectedColor": "#bc4b3a",
+      "list": [
+        {
+          "iconPath": "resources/image/zhinan.png",
+          "selectedIconPath": "resources/image/zhinan-h.png",
+          "pagePath": "pages/index/index",
+          "text": "指南"
+        },
+        {
+          "iconPath": "resources/image/test.png",
+          "selectedIconPath": "resources/image/test-h.png",
+          "pagePath": "pages/test/test",
+          "text": "测试"
+       
+        },
+        {
+          "iconPath": "resources/image/tucaoqu.png",
+          "selectedIconPath": "resources/image/tucaoqu-h.png",
+          "pagePath": "pages/talk/talk",
+          "text": "吐槽区"
+        },
+        {
+          "iconPath": "resources/image/down.png",
+          "selectedIconPath": "resources/image/down-h.png",
+          "pagePath": "pages/download/download",
+          "text": "下载"
+        }
+      ]
+    },
+
+    "debug": false
+}

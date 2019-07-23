@@ -1,0 +1,36 @@
+<view class=".main">
+  <!-- 题目 -->
+  <view class='page_subtitle' wx:if="{{questionshow==0}}">{{currentnum}}/10</view>
+  <view class="question" wx:if="{{questionshow==0}}">
+    <view class="page__title">{{currenttitle}}</view>
+    <view class='bigbox'>
+      <view class="boderbox">
+        <image class="minbox" bindtap='nextquestion' data-classify='干垃圾' src='../../resources/image/ganlaji.png'>
+        </image>
+        <image class="minbox" bindtap='nextquestion' data-classify='湿垃圾' src='../../resources/image/shilaji.png'>
+        </image>
+      </view>
+      <view class="boderbox">
+        <image class="minbox" bindtap='nextquestion' data-classify='可回收垃圾' src='../../resources/image/huishoulaji.png'>
+        </image>
+        <image class="minbox" bindtap='nextquestion' data-classify='有害垃圾' src='../../resources/image/youhailaji.png'>
+        </image>
+      </view>
+    </view>
+  </view>
+  <!-- 题目 -->
+  <view class="resultbox" wx:if="{{questionshow==1}}">
+    <view class="page__title">{{result}}分</view>
+    <block wx:for="{{currentlist}}" wx:key="name">
+    <view class='listcell'>
+      <view class="bd">{{item.name}}</view>
+      <view class="ft">{{item.answer}}</view>
+      <view class="ft" wx:if="{{item.torf!=true}}">{{item.classify}}</view>
+      <view class="ft" wx:if="{{item.torf==true}}"><image class="minimage" src='../../resources/image/true.png'></image></view>
+    </view>
+    </block>
+  </view>
+  <view class="buttongroup" wx:if="{{questionshow==1}}">
+      <button class="btn1" bindtap='again' >再考一次</button>
+      <button class="btn2" >考考别人</button></view>
+  </view>

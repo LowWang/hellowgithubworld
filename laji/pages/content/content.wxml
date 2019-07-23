@@ -1,0 +1,42 @@
+<view class='messagebox' style='margin-bottom:10px;'>
+  <view class="leftbox"><image class='picture' src='../../resources/image/write.png'></image></view>
+  <view class="rightbox">
+  <view class='name'>{{message.name}}</view>
+  <view class="content">{{message.content}}</view>
+  <view class="operation">
+  <view class="time">{{message.createtime}}</view>
+  <view class='share'><image class='minimage' src='../../resources/image/share.png'></image>分享</view>
+  <view class='talk'><image class='minimage' src='../../resources/image/comment.png'></image>评论{{message.commentnum}}</view>
+  <view class='good'><image class='minimage' src='../../resources/image/good.png'></image>点赞{{message.goodnum}}</view>
+  <view class="cleanboth"></view>
+  </view>
+  </view>
+  <view class="cleanboth"></view>
+</view>
+
+<view class='partition'>
+全部评论
+</view>
+<block wx:for="{{message.replylist}}" wx:key="id" wx:for-item="reply">
+<view class='messagebox'>
+  <view class="leftbox"><image class='picture' src='../../resources/image/write.png'></image></view>
+  <view class="rightbox">
+  <view class='name'>{{reply.name}}</view>
+  <view class="content">{{reply.content}}</view>
+  <view class="operation">
+  <view class="time">{{reply.createtime}}</view>
+  <!-- <view class='share'><image class='minimage' src='../../resources/image/share.png'></image>分享</view> -->
+  <!-- <view class='talk'><image class='minimage' src='../../resources/image/comment.png'></image>评论{{reply.commentnum}}</view> -->
+  <view class='good'><image class='minimage' src='../../resources/image/good.png'></image>点赞{{reply.goodnum}}</view>
+  <view class="cleanboth"></view>
+  </view>
+  </view>
+  <view class="cleanboth"></view>
+</view>
+</block>
+
+<view class="footview">
+<textarea maxlength='-1' class='publish'></textarea>
+    <button class="btn1" bindtap='again' >发言</button>
+
+</view>

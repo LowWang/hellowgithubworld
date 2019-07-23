@@ -1,0 +1,11 @@
+
+<input class='aaaa'></input>
+<view class='imagebox'>
+<image class="bigimage" src='../../resources/image/laji1.jpg'></image>
+<button class='btn1'>保存</button>
+</view>
+<view class='imagebox'>
+<image class="bigimage" src='../../resources/image/laji2.jpg'></image>
+<button class='btn1'>保存</button>
+</view>
+

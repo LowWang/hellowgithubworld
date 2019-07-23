@@ -1,0 +1,54 @@
+page{
+  height: 100%;
+  width: 100%;
+
+}
+
+.imagebox{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+
+.bigimage{
+  padding: 10%;
+  width: 80%;
+  height: 70%;
+}
+
+.btn1{
+    /* display: inline-block; */
+    width: 100px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    text-align: center;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 5px 15px 6px;
+    font-size: 12px;
+    border-radius: 10px;
+    transition: color .2s linear,background-color .2s linear,border .2s linear,box-shadow .2s linear;
+    color: #515a6e;
+    background-color: rgb(255, 174, 0);
+    border-color: #dcdee2;
+}
+
+.aaaa{
+  border: 1px solid black;
+  width: 50px;
+  margin-left: 100px;
+ transform:rotate(7deg);
+-ms-transform:rotate(7deg); 	/* IE 9 */
+-moz-transform:rotate(7deg); 	/* Firefox */
+-webkit-transform:rotate(7deg); /* Safari 和 Chrome */
+-o-transform:rotate(7deg); 	
+}

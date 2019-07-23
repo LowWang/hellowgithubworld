@@ -1,0 +1,70 @@
+<view class="main">
+  <!-- 搜索框 -->
+  <view class="weui-search-bar" style='height:8%'>
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+    <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">
+        <block wx:for="{{searchlist}}" wx:key="item" wx:for-item="search" >
+        <view>{{search}}</view>
+        </block>
+      </view>
+    </navigator>
+  </view>
+  <!-- 搜索框 -->
+
+  <!-- 左边滚动框 -->
+  <view class="classify-left">
+    <view class="cate-list">
+    <view data-classfity='湿垃圾' data-tapindex='0' class="listcard" bindtap='jumpIndex'>
+      湿垃圾
+    </view>
+    <view  class="listcard2 {{indexId == 0 ? 'animation_on':''}} " style='{{lists[indexId].cardcolor}}' >
+      湿垃圾
+    </view>
+    </view>
+<view class="cate-list">
+    <view data-classfity='干垃圾' data-tapindex='1' class="listcard" bindtap='jumpIndex'>
+      干垃圾
+    </view>
+    <view  class="listcard2 {{indexId == 1 ? 'animation_on':''}} " style='{{lists[indexId].cardcolor}}' >
+      干垃圾
+    </view>
+    </view>
+    <view class="cate-list">
+    <view data-classfity='可回收物' data-tapindex='2' class="listcard" bindtap='jumpIndex'>
+      可回收物
+    </view>
+    <view  class="listcard2 {{indexId == 2 ? 'animation_on':''}} " style='{{lists[indexId].cardcolor}}' >
+      可回收物
+    </view>
+    </view>
+        <view class="cate-list">
+    <view data-classfity='有害垃圾' data-tapindex='3' class="listcard" bindtap='jumpIndex'>
+      有害垃圾
+    </view>
+    <view  class="listcard2 {{indexId == 3 ? 'animation_on':''}} " style='{{lists[indexId].cardcolor}}' >
+      有害垃圾
+    </view>
+    </view>
+  </view>
+  <!-- 左边滚动框 -->
+  <scroll-view scroll-y="true" class="classify-right ">
+    <view class="describe" style='{{lists[indexId].bgcolor}}'>
+      <image class="lajiclassfity" src='{{lists[indexId].image}}'></image>
+      <view style='padding:10px;padding-bottom:30px;'><text decode="{{true}}">{{lists[indexId].describe}}</text></view>
+    </view>
+    <block wx:for="{{currentlist}}" wx:key="name" wx:for-index="index">
+      <view class='douleline'>{{item.name}}</view>
+    </block>
+  </scroll-view>
+</view>

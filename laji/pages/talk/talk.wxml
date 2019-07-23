@@ -1,0 +1,40 @@
+<!-- 顶部 -->
+<view class="toptab">
+<image bindtap='upanimation' class='write' src='../../resources/image/write.png'></image>
+</view>
+<view style='height:20px;width:100%'></view>
+<!-- 顶部 -->
+<block wx:for="{{commentlist}}" wx:key="id" wx:for-item="comment">
+<view class='messagebox'>
+  <view class="leftbox"><image class='picture' src='../../resources/image/write.png'></image></view>
+  <view class="rightbox">
+  <view class='name'>{{comment.name}}</view>
+  <view class="content">{{comment.content}}</view>
+  <view class="operation">
+  <view class="time">{{comment.createtime}}</view>
+  <view class='share'><image class='minimage' src='../../resources/image/share.png'></image>分享</view>
+  <view class='talk'><image class='minimage' src='../../resources/image/comment.png'></image>评论{{comment.commentnum}}</view>
+  <view class='good'><image class='minimage' src='../../resources/image/good.png'></image>点赞{{comment.goodnum}}</view>
+  <view class="cleanboth"></view>
+  </view>
+  <view class='comment'>
+      <view class="single"><text class='name'>{{comment.fristcomment.name}}:</text><text class='content'>{{comment.fristcomment.content}}</text></view>
+      <view class='more' bindtap="moreclick">更多评论</view>
+  </view>
+  </view>
+  <view class="cleanboth"></view>
+</view>
+</block>
+
+<!-- 隐藏弹框区域 -->
+  <view class="hidelayer" wx:if="{{isshow}}" bindtap='hideanimation'>
+  </view>
+  <view class="hidechoose {{boderstatus==0?'':boderstatus==1?'.upanimation':'.downanimation'}}"  animation="{{animationData}}">
+    <textarea maxlength='-1' class='publish'></textarea>
+    <button class="btn1" bindtap='again' >发言</button>
+
+
+
+
+  </view>
+  <!-- 隐藏弹框区域 -->
